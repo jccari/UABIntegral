@@ -107,11 +107,11 @@ void CombatSearchExperiment::run()
 
         std::cout << "\n" << stars << "\n* Running Experiment: " << _name << " [" << _searchTypes[i] << "]\n" << stars << "\n";
 
-        //if (_searchTypes[i].compare("Integral") == 0)
-        //{
-        //    combatSearch = std::shared_ptr<CombatSearch>(new CombatSearch_Integral(_params));
-        //    resultsFile += "_Integral"; 
-        //}
+        if (_searchTypes[i].compare("Integral") == 0)
+        {
+            combatSearch = std::shared_ptr<CombatSearch>(new CombatSearch_Integral(_params));
+            resultsFile += "_Integral"; 
+        }
         else if (_searchTypes[i].compare("Bucket") == 0)
         {
             combatSearch = std::shared_ptr<CombatSearch>(new CombatSearch_Bucket(_params));
